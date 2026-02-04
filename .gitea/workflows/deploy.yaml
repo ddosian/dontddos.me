@@ -28,6 +28,11 @@ jobs:
       - name: Build site
         run: hugo --minify
 
+      - name: Debug network
+        run: |
+          ping -c 3 10.77.1.104 || echo "Ping failed"
+          nc -zv 10.77.1.104 22 -w 5 || echo "Port 22 not reachable"
+
       - name: Deploy via SSH
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
