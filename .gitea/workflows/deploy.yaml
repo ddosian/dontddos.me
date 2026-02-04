@@ -27,3 +27,13 @@ jobs:
 
       - name: Build site
         run: hugo --minify
+
+      - name: Deploy via SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H docker-public.local.dontddos.me >> ~/.ssh/known_hosts
+          scp -r public/* dontddosme-deploy@docker-public.local.dontddos.me:/opt/containers/dontddosme/content/
