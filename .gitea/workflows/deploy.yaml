@@ -35,5 +35,4 @@ jobs:
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -H docker-public.local.dontddos.me >> ~/.ssh/known_hosts
-          scp -r public/* dontddosme-deploy@docker-public.local.dontddos.me:/opt/containers/dontddosme/content/
+          scp -r public/* dontddosme-deploy@10.77.1.104:/opt/containers/dontddosme/content/
