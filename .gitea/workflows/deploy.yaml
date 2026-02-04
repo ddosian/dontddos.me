@@ -36,5 +36,5 @@ jobs:
           echo "$SSH_PRIVATE_KEY" > id_ed25519 && chmod 600 id_ed25519
           eval $(ssh-agent -s)
           ssh-add id_ed25519
-          ssh -o StrictHostKeyChecking=no dontddosme-deploy@10.77.1.104 "exit"
+          ssh -o StrictHostKeyChecking=no dontddosme-deploy@10.77.1.104 "ls /opt/containers/dontddos.me"
           scp -r public/* dontddosme-deploy@10.77.1.104:/opt/containers/dontddosme/content/
