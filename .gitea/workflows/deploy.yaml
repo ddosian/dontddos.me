@@ -35,7 +35,7 @@ jobs:
       - name: Copy SSH key
         run: |
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > id_rsa && chmod 600 id_rsa
-          eval $(ssh-agent -s)
+          ssh-add id_rsa
 
       - name: Deploy via SSH
         run: |
