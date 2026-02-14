@@ -35,4 +35,4 @@ jobs:
           eval $(ssh-agent -s)
           ssh-add id_rsa
           ssh -o StrictHostKeyChecking=no ddos@10.20.20.105 "ls /opt/containers/dontddos.me"
-          scp -r public/* ddos@10.20.20.105:/opt/containers/dontddosme/content/
+          scp -r public/* ddos@10.20.20.105:/opt/containers/dontddos.me/content/
