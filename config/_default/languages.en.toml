@@ -23,5 +23,7 @@ title = "DontDDoS"
   # bio = "A little bit about you"
   links = [
     { email = "mailto:contact@dontddos.me" },
+    { matrix = "https://matrix.to/#/@dontddos:matrix.dontddos.me"},
     { github = "https://github.com/ddosian" },
+    { gitea = "https://gitea.dontddos.me/dontddos"}
   ]
